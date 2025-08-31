@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Gustavo Mendes e Silva - Psiquiatria com IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Roboto+Mono:wght@300;500&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Josefin Sans"', 'sans-serif'],
+              body: ['"Roboto Mono"', 'monospace'],
+              accent: ['"Space Grotesk"', 'sans-serif'],
+            },
+            colors: {
+              background: '#F8F9FA',
+              'surface-solid': '#FFFFFF',
+              'text-primary': '#1A1B26',
+              'text-secondary': '#5F6368',
+              'primary-accent': '#6A5ACD', // A slightly more muted, professional purple
+              'primary-accent-hover': '#8272E5',
+              'glass-bg': 'rgba(255, 255, 255, 0.5)', // Brighter for light theme
+              'glass-border': 'rgba(255, 255, 255, 0.7)',
+              'glass-border-darker': 'rgba(0, 0, 0, 0.05)',
+            },
+            boxShadow: {
+              glass: '0 8px 32px 0 rgba(0, 0, 0, 0.1)',
+              'glass-inset': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.6)',
+              glow: '0 0 20px rgba(106, 90, 205, 0.4), 0 0 40px rgba(106, 90, 205, 0.2)',
+              'subtle': '0 4px 6px rgba(0, 0, 0, 0.05)',
+              'medium': '0 10px 20px rgba(0, 0, 0, 0.07)',
+            },
+            textShadow: {
+              'lifted-text': '0 2px 10px rgba(0, 0, 0, 0.1)',
+            },
+            backgroundImage: {
+               'aurora': 'radial-gradient(ellipse at 15% 85%, #6A5ACD1A 0%, transparent 50%), radial-gradient(ellipse at 85% 15%, #8272E51A 0%, transparent 50%)',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'scale(0.98)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              fadeOut: {
+                '0%': { opacity: '1', transform: 'scale(1)' },
+                '100%': { opacity: '0', transform: 'scale(0.98)' },
+              },
+               aurora: {
+                'from': { 'background-position': '0% 50%' },
+                'to': { 'background-position': '200% 50%' },
+               },
+              bounce: {
+                '0%, 80%, 100%': { transform: 'scale(0)' },
+                '40%': { transform: 'scale(1.0)' },
+              }
+            },
+            animation: {
+              fadeInUp: 'fadeInUp 0.6s ease-out forwards',
+              fadeIn: 'fadeIn 0.5s ease-out forwards',
+              fadeOut: 'fadeOut 0.5s ease-in forwards',
+              aurora: 'aurora 45s linear infinite',
+              bounce: 'bounce 1.4s infinite ease-in-out both',
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="font-body bg-background text-text-secondary antialiased font-light leading-relaxed">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
